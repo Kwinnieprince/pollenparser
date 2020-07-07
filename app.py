@@ -52,5 +52,11 @@ def parse_page(html):
     print("The following results were retrieved:\n%s", repr(results))
     return results
 
+@app.after_request
+def after_request(response):
+    header = response.headers
+    header['Access-Control-Allow-Origin'] = 'https://kwinten.me'
+    return response
+
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=5000)
