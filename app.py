@@ -55,7 +55,7 @@ def parse_page(html):
 @app.after_request
 def after_request(response):
     header = response.headers
-    header['Access-Control-Allow-Origin'] = 'https://kwinten.me'
+    header['Access-Control-Allow-Origin'] = 'https://weg.kwinten.me'
     return response
 
 if __name__ == '__main__':
