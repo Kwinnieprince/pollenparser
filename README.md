@@ -28,8 +28,8 @@ This project is available on [DockerHub](https://hub.docker.com/repository/docke
 
 ## Live site
 
-You can see the API [here](https://api.kwinten.me/v1/pollenparser)
-The website where it is used can be found [here](https://weg.kwinten.me)
+* You can see the API [here](https://api.kwinten.me/v1/pollenparser)
+* The website where it is used can be found [here](https://weg.kwinten.me)
 
 ## Credits
 
