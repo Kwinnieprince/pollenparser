@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 pollen_url = "https://www.meteo.be/nl/weer/verwachtingen/stuifmeelallergie-en-hooikoorts"
 column1_header = "column_1"
 column2_header = "column_2"
+column3_header = "allergie"
 
 app = Flask(__name__)
 
@@ -45,6 +46,7 @@ def parse_page(html):
             continue
         item[column1_header] = row.findAll("td")[0].string
         item[column2_header] = row.findAll("td")[1].string
+        item[column3_header] = row.findAll("td")[0].string
         # Add a * behind the current date row
         if item[column1_header].startswith(get_current_day()):
             item[column2_header] = item[column2_header] + " (today)"
@@ -55,7 +57,7 @@ def parse_page(html):
 @app.after_request
 def after_request(response):
     header = response.headers
-    header['Access-Control-Allow-Origin'] = 'https://weg.kwinten.me'
+    # header['Access-Control-Allow-Origin'] = 'https://weg.kwinten.me'
     return response
 
 if __name__ == '__main__':
