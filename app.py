@@ -46,7 +46,7 @@ def parse_page(html):
             continue
         item[column1_header] = row.findAll("td")[0].string
         item[column2_header] = row.findAll("td")[1].string
-        item[column3_header] = row.findAll("td")[0].string
+        item[column3_header] = row.findAll("td")[1].string
         # Add a * behind the current date row
         if item[column1_header].startswith(get_current_day()):
             item[column2_header] = item[column2_header] + " (today)"
